@@ -1,12 +1,14 @@
 //import { useState } from 'react';
 import './App.css';
-import ButtonUsage from './components/layout/Button.jsx';
+import Input from './components/form/Input';
 
 function App() {
   return (
-    <div>
-      <ButtonUsage />
-    </div>
+    <>
+    <Input name='field-search' label='Pesquisar'/>
+    <Button variant='contained' texto='Asc' handleOnChange={(e)=>{}}/>
+    </>
+
   );
 }
 
