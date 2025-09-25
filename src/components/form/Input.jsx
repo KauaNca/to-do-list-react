@@ -2,7 +2,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 
-function Input({ id, name, label }) {
+function Input({ name, label }) {
     return (
         <>
             <TextField
