@@ -1,16 +1,33 @@
-# React + Vite
+# 📝 To-Do List com React e Material UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📌 Sobre o Projeto
+Este é um projeto de **To-Do List** desenvolvido em **React** com **Material UI (MUI)** para estilização.  
+O objetivo principal é praticar:
+- Organização de tarefas com React (componentização, estados, props).
+- Uso de componentes prontos do Material UI.
+- Trabalho em equipe, estimulando **interatividade**, **compartilhamento de conhecimento** e **colaboração no GitHub**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🎯 Funcionalidades
+- ✅ Adicionar novas tarefas  
+- ✅ Listar tarefas cadastradas  
+- ✅ Excluir tarefas  
+- ✅ Layout responsivo utilizando **Grid e Box** do MUI  
+- ✅ Estilização com **ThemeProvider** (tema claro/escuro)  
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tecnologias Utilizadas
+- [React](https://react.dev/)  
+- [Material UI](https://mui.com/)  
+- [Vite](https://vitejs.dev/) (para desenvolvimento rápido)  
+- [GitHub](https://github.com/) (colaboração e versionamento)  
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Como Rodar o Projeto
+
+### 1. Clone o repositório
+```bash
+git clone https://github.com/seu-usuario/todo-list-mui.git
