@@ -12,7 +12,7 @@ function App() {
 
   return (
     <>
-      <SimpleContainer maxWidth="false" bgcolor="white" height="90vh">
+      <SimpleContainer maxWidth="false" bgcolor="white" height="100vh" sxContainer={{ minWidth: "40vw" }}>
         <div className="text-center mb-8 animate-fade-in">
           <div className="inline-flex items-center gap-3 mb-4">
             <div className="p-3 bg-gradient-primary rounded-2xl shadow-medium">

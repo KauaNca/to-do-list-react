@@ -3,15 +3,12 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 
-export default function SimpleContainer({ maxWidth, bgcolor, height, ...props}) {
+export default function SimpleContainer({ maxWidth, bgcolor, height,sxContainer, ...props}) {
     //Por agora deixar essa borda para visualizar o container
-    let sx = {
-    border: "1px solid black",
-  };
   return (
     <React.Fragment>
       <CssBaseline />
-      <Container maxWidth={maxWidth} sx={sx}>
+      <Container maxWidth={maxWidth} sx={sxContainer}>
         <Box sx={{ bgcolor: { bgcolor }, height: { height } }}>
           {props.children} {/* Renderiza os componentes filhos passados para SimpleContainer*/}
         </Box>
