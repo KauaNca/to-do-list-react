@@ -1,6 +1,6 @@
 import "./App.css";
 import SimpleContainer from "./components/layout/Container";
-import React from "react";
+import React, { useState } from "react";
 import Input from "./components/form/Input";
 import Botao from "./components/form/Botao";
 import { CheckCircle2 } from "lucide-react";
@@ -9,10 +9,17 @@ function App() {
   const handleAddTask = () => {
     console.log("Adicionar tarefa");
   };
+  const [tarefa, setTarefa] = useState([]); // Estado para armazenar as tarefas
+
 
   return (
     <>
-      <SimpleContainer maxWidth="false" bgcolor="white" height="100vh" sxContainer={{ minWidth: "40vw" }}>
+      <SimpleContainer
+        maxWidth="false"
+        bgcolor="white"
+        height="100vh"
+        sxContainer={{ minWidth: "40vw" }}
+      >
         <div className="text-center mb-8 animate-fade-in">
           <div className="inline-flex items-center gap-3 mb-4">
             <div className="p-3 bg-gradient-primary rounded-2xl shadow-medium">
@@ -30,6 +37,12 @@ function App() {
           <Input placeholder="Digite sua nova tarefa..." />
           <Botao onClick={handleAddTask} />
         </div>
+        {/* Renderize a lista de tarefas aqui */}
+        {tarefa.length === 0 && (
+          <p className="text-center text-muted-foreground mt-4">
+            Nenhuma tarefa adicionada.
+          </p>
+        )}
       </SimpleContainer>
     </>
   );
