@@ -5,6 +5,8 @@ import Input from "./components/form/Input";
 import Botao from "./components/form/Botao";
 import { CheckCircle2 } from "lucide-react";
 import AssignmentOutlinedIcon from "@mui/icons-material/AssignmentOutlined";
+import Checkboxe from "./components/form/Checkbox";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 function App() {
   const handleAddTask = () => {
@@ -19,6 +21,8 @@ function App() {
       .then((resp) => resp.json())
       .then((data) => {
         console.log("Tarefa adicionada:", data);
+        setInput(""); // Limpa o campo de entrada após adicionar a tarefa
+        buscarTarefas(); // Atualiza a lista de tarefas
       })
       .catch((error) => {
         console.error("Erro ao adicionar tarefa:", error);
@@ -96,7 +100,41 @@ function App() {
           </SimpleContainer>
         )}
 
-        {tarefa.length > 0 && <p>Há tarefas</p>}
+        {tarefa.length > 0 && (
+          <div
+            className="input-container"
+            style={{
+              marginTop: "20px",
+              display: "flex",
+              fontWeight: "bold",
+              color: "black",
+              justifyContent: "space-around",
+            }}
+          >
+            <div>{tarefa.length} tarefas</div>
+            <div>{tarefa.filter((t) => t.concluida).length} concluídas</div>
+          </div>
+        )}
+
+        {tarefa.length > 0 &&
+          tarefa.map((tarefa) => (
+            <div
+              key={tarefa.id}
+              className="input-container"
+              style={{
+                marginTop: "20px",
+                display: "flex",
+                fontWeight: "bold",
+                color: "black",
+                justifyContent: "space-around",
+              }}
+            >
+              <Checkboxe tarefa={tarefa.titulo} />
+              <Botao tipo="remover" className="botao--remover">
+                <DeleteIcon />
+              </Botao>
+            </div>
+          ))}
       </SimpleContainer>
     </>
   );
