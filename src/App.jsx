@@ -15,19 +15,19 @@ function App() {
   const [notification, setNotification] = useState({
     message: "",
     type: "",
-    isVisible: false
+    isVisible: false,
   });
 
   const showNotification = (message, type) => {
     setNotification({
       message,
       type,
-      isVisible: true
+      isVisible: true,
     });
   };
 
   const hideNotification = () => {
-    setNotification(prev => ({ ...prev, isVisible: false }));
+    setNotification((prev) => ({ ...prev, isVisible: false }));
   };
 
   const handleAddTask = () => {
@@ -58,8 +58,11 @@ function App() {
       });
   };
   const handleToggleTask = (id) => {
-    const tarefaAtual = tarefa.find(t => t.id === id);
-    const tarefaAtualizada = { ...tarefaAtual, concluida: !tarefaAtual.concluida };
+    const tarefaAtual = tarefa.find((t) => t.id === id);
+    const tarefaAtualizada = {
+      ...tarefaAtual,
+      concluida: !tarefaAtual.concluida,
+    };
 
     fetch(`http://localhost:5000/tarefas/${id}`, {
       method: "PUT",
@@ -107,17 +110,17 @@ function App() {
         console.error("Erro ao buscar tarefas:", error);
       });
   }
-  
+
   useEffect(buscarTarefas, []); //Quando o componente for montado, buscar as tarefas
   return (
     <>
       <SimpleContainer
         maxWidth="false"
-        bgcolor="white"
-        sxContainer={{ 
+        // bgcolor="white"
+        sxContainer={{
           minWidth: "40vw",
           padding: "20px 0",
-          minHeight: "100vh"
+          minHeight: "100vh",
         }}
       >
         <div className="text-center mb-8 animate-fade-in">
@@ -140,7 +143,7 @@ function App() {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyPress={(e) => {
-              if (e.key === 'Enter') {
+              if (e.key === "Enter") {
                 handleAddTask();
               }
             }}
@@ -149,7 +152,7 @@ function App() {
         </div>
         {/* Estatísticas das tarefas */}
         {tarefa.length > 0 && (
-          <TaskStats 
+          <TaskStats
             totalTasks={tarefa.length}
             completedTasks={tarefa.filter((t) => t.concluida).length}
           />
@@ -170,7 +173,14 @@ function App() {
               }}
             >
               <AssignmentOutlinedIcon style={{ fontSize: 70, color: "#ccc" }} />
-              <p style={{ fontSize: 20, color: "#333", fontWeight: "bold", marginTop: "16px" }}>
+              <p
+                style={{
+                  fontSize: 20,
+                  color: "#333",
+                  fontWeight: "bold",
+                  marginTop: "16px",
+                }}
+              >
                 Nenhuma tarefa ainda
               </p>
               <p style={{ fontSize: 16, color: "#666", marginTop: "8px" }}>
