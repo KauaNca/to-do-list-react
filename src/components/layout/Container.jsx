@@ -9,7 +9,11 @@ export default function SimpleContainer({ maxWidth, bgcolor, height,sxContainer,
     <React.Fragment>
       <CssBaseline />
       <Container maxWidth={maxWidth} sx={sxContainer}>
-        <Box sx={{ backgroundColor: { bgcolor }, height: { height } }}>
+        <Box sx={{ 
+          backgroundColor: bgcolor, 
+          minHeight: height,
+          padding: "20px 0"
+        }}>
           {props.children} {/* Renderiza os componentes filhos passados para SimpleContainer*/}
         </Box>
       </Container>

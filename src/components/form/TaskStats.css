@@ -1,0 +1,45 @@
+.task-stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f0f0f0;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.task-stats__item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  justify-content: center;
+}
+
+.task-stats__number {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.task-stats__number--completed {
+  color: #4CAF50;
+}
+
+.task-stats__label {
+  font-size: 16px;
+  color: #666;
+  font-weight: 500;
+}
+
+.task-stats__divider {
+  width: 1px;
+  height: 30px;
+  background-color: #e0e0e0;
+  margin: 0 20px;
+}

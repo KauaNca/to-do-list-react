@@ -2,8 +2,10 @@
   min-width: 300px;
   max-width: 100vw;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0;
   text-align: center;
+  background: white;
+  min-height: 100vh;
 }
 
 .logo {
@@ -77,6 +79,7 @@ Header Styles */
 
 .mb-8 {
   margin-bottom: 2rem;
+  padding-top: 2rem;
 }
 
 .mb-4 {
@@ -163,4 +166,63 @@ Header Styles */
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Reset global para evitar problemas de scroll */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: white;
+  min-height: 100vh;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Tasks Container */
+.tasks-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 40px 20px;
+  max-height: none;
+  overflow: visible;
+}
+
+/* Melhorias no input container */
+.input-container {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  min-width: 300px;
+  max-width: 1200px;
+  margin: 0 auto 20px auto;
+  padding: 0 20px;
+  background-color: transparent;
+}
+
+.input-container .MuiOutlinedInput-root {
+  flex: 1;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f0f0f0;
+}
+
+.input-container .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+  border-color: transparent;
+}
+
+.input-container .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: #4CAF50;
+}
+
+.input-container .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #4CAF50;
+  border-width: 2px;
 }
