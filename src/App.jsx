@@ -58,7 +58,8 @@ function App() {
       });
   };
   const handleToggleTask = (id) => {
-    const tarefaAtual = tarefa.find((t) => t.id === id);
+    const tarefaAtual = tarefa.find((t) => t.id === id); //quando encontra, ele retorna o objeto
+    if (!tarefaAtual) return;
     const tarefaAtualizada = {
       ...tarefaAtual,
       concluida: !tarefaAtual.concluida,

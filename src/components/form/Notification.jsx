@@ -10,11 +10,19 @@ function Notification({ message, type, isVisible, onClose }) {
 
       return () => clearTimeout(timer);
     }
-  }, [isVisible, onClose]);
+  }, [isVisible, onClose]); //onClose como dependência para que a função mais recente seja usada
+
+  /*
+onClose é uma prop que pode variar, incluí-la nas dependências garante que:
+✅ Sempre use a função mais recente que foi passada
+✅ Funcione corretamente mesmo que o onClose mude
+✅ Seja reutilizável com diferentes comportamentos de fechamento
+  */
 
   if (!isVisible) return null;
 
   // Separar título e mensagem
+  //Função anônima para retornar o conteúdo baseado no tipo e mensagem
   const getNotificationContent = () => {
     if (type === 'success') {
       if (message.includes('removida') || message.includes('deletada')) {
